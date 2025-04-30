@@ -1,0 +1,74 @@
+{
+  "parcelas": {
+    "solo-terreno": [
+      {
+        "id": 1,
+        "nombre": "Parcela Los Robles",
+        "tamanio": "5000m²",
+        "precio": 1000000,
+        "ubicacion": "Región de Los Lagos",
+        "caracteristicas": [
+          "Acceso a agua potable",
+          "Electricidad disponible",
+          "Terreno plano",
+          "Vista panorámica"
+        ],
+        "imagen": "/images/parcela-1.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Parcela Los Arrayanes",
+        "tamanio": "5000m²",
+        "precio": 1200000,
+        "ubicacion": "Región de Los Lagos",
+        "caracteristicas": [
+          "Acceso a agua potable",
+          "Electricidad disponible",
+          "Terreno con pendiente suave",
+          "Cerca de lago"
+        ],
+        "imagen": "/images/parcela-2.jpg"
+      }
+    ],
+    "casa-parcela": [
+      {
+        "id": 3,
+        "nombre": "Casa Parcela Los Coigües",
+        "tamanio": "5000m²",
+        "precio": 2500000,
+        "ubicacion": "Región de Los Lagos",
+        "caracteristicas": [
+          "Casa de 2 dormitorios",
+          "Acceso a agua potable",
+          "Electricidad disponible",
+          "Internet disponible",
+          "Cochera"
+        ],
+        "imagen": "/images/casa-parcela-1.jpg"
+      }
+    ]
+  },
+  "servicios": [
+    {
+      "id": 1,
+      "nombre": "Tour Virtual",
+      "descripcion": "Explora las parcelas desde la comodidad de tu hogar",
+      "precio": 0
+    },
+    {
+      "id": 2,
+      "nombre": "Crédito Directo",
+      "descripcion": "Financiamiento sin bancos ni avales",
+      "precio": 0
+    }
+  ],
+  "contacto": {
+    "telefono": "+56 9 5018 6583",
+    "email": "contacto@terrasolparcelas.cl",
+    "direccion": "Entre Talca y la Región de Los Lagos",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/tuparcelaenelsurdechile",
+      "instagram": "https://www.instagram.com/terrasol_parcelas"
+    }
+  }
+} 

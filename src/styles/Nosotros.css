@@ -1,0 +1,136 @@
+.nosotros-container {
+  padding-top: 80px; /* Para compensar el header fijo */
+}
+
+.nosotros-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('/images/nosotros-bg.jpg') center/cover;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.nosotros-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.nosotros-hero .subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+}
+
+.nosotros-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.nosotros-info {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.nosotros-info h2 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.nosotros-info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nosotros-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h3 {
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.feature p {
+  line-height: 1.6;
+}
+
+.nosotros-vision {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nosotros-vision h2 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.nosotros-vision p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .nosotros-hero {
+    height: 30vh;
+    padding: 1rem;
+  }
+
+  .nosotros-hero h1 {
+    font-size: 2rem;
+  }
+
+  .nosotros-hero .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .nosotros-content {
+    padding: 2rem 1rem;
+  }
+
+  .nosotros-info p,
+  .nosotros-vision p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .feature {
+    padding: 1.5rem;
+  }
+}
+
+/* Mejoras de accesibilidad */
+.feature:focus-within {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Mejoras de legibilidad */
+.nosotros-content {
+  color: #333;
+} 
