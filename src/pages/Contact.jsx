@@ -88,7 +88,7 @@ function Contact() {
                   Dirección
                 </Typography>
                 <Typography variant="body2">
-                  Av. Principal 123, Cholchol
+                JOSÉ JOAQUÍN PéReZ, 449, Cholchol
                 </Typography>
               </Box>
             </InfoItem>
@@ -100,7 +100,7 @@ function Contact() {
                   Teléfono
                 </Typography>
                 <Typography variant="body2">
-                  +56 9 1234 5678
+                (45) 273 4200
                 </Typography>
               </Box>
             </InfoItem>
@@ -112,7 +112,7 @@ function Contact() {
                   Correo Electrónico
                 </Typography>
                 <Typography variant="body2">
-                  contacto@cholchol.cl
+                municipalidad@municholchol.cl
                 </Typography>
               </Box>
             </InfoItem>
@@ -124,7 +124,7 @@ function Contact() {
                   Horario de Atención
                 </Typography>
                 <Typography variant="body2">
-                  Lunes a Viernes: 8:30 - 17:30
+                  Lunes a Viernes: 8:30 - 14:00
                 </Typography>
               </Box>
             </InfoItem>
@@ -137,15 +137,15 @@ function Contact() {
       </Grid>
 
       <MapContainer>
-        {/* Aquí puedes integrar un mapa de Google Maps o similar */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.1234567890123!2d-72.12345678901234!3d-38.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDA3JzI0LjUiUyA3MsKwMDcnMjQuNSJX!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.1234567890123!2d-72.8284!3d-38.6004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9612d3c2c0c0c0c0%3A0x0!2sJos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+449%2C+Cholchol%2C+Araucan%C3%ADa!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Ubicación de la Municipalidad de Cholchol"
         />
       </MapContainer>
     </Container>

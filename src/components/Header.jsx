@@ -11,13 +11,16 @@ import {
   MenuItem,
   useTheme,
   useMediaQuery,
+  Divider,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link as RouterLink } from 'react-router-dom';
+import logoImage from '../assets/images/logos/LOGOCOLOR.png';
 
 const pages = [
   { title: 'Inicio', path: '/' },
   { title: 'Noticias', path: '/noticias' },
+  { title: 'Municipio', path: '/municipio' },
   { title: 'Servicios', path: '/servicios' },
   { title: 'Contacto', path: '/contacto' },
 ];
@@ -26,6 +29,7 @@ function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isSmallMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,25 +40,50 @@ function Header() {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar 
+      position="sticky"
+      sx={{
+        backgroundColor: '#f5f5f5', // Fondo claro
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* Logo para pantallas grandes */}
-          <Typography
-            variant="h6"
-            noWrap
+          {/* Logo y texto para pantallas grandes */}
+          <Box
             component={RouterLink}
             to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontWeight: 700,
-              color: 'inherit',
+              alignItems: 'center',
               textDecoration: 'none',
+              color: '#1a237e', // Color azul oscuro para el texto
+              cursor: 'pointer',
+              '&:hover': {
+                opacity: 0.8,
+              },
             }}
           >
-            MUNICIPALIDAD DE CHOLCHOL
-          </Typography>
+            <Box
+              component="img"
+              src={logoImage}
+              alt="Logo Municipalidad de Cholchol"
+              sx={{
+                height: 90,
+                mr: 2,
+              }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                fontWeight: 700,
+              }}
+            >
+              MUNICIPALIDAD DE CHOLCHOL
+            </Typography>
+          </Box>
 
           {/* Menú hamburguesa para móvil */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -96,26 +125,59 @@ function Header() {
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
+              <Divider />
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                component="a"
+                href="#"
+                sx={{
+                  color: theme.palette.primary.main,
+                  fontWeight: 600,
+                }}
+              >
+                <Typography textAlign="center">Webmail</Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
           {/* Logo para móvil */}
-          <Typography
-            variant="h6"
-            noWrap
+          <Box
             component={RouterLink}
             to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontWeight: 700,
-              color: 'inherit',
+              alignItems: 'center',
               textDecoration: 'none',
+              color: 'inherit',
+              cursor: 'pointer',
+              '&:hover': {
+                opacity: 0.8,
+              },
             }}
           >
-            MUNICIPALIDAD DE CHOLCHOL
-          </Typography>
+            <Box
+              component="img"
+              src={logoImage}
+              alt="Logo Municipalidad de Cholchol"
+              sx={{
+                height: 90,
+                mr: isSmallMobile ? 0 : 2,
+              }}
+            />
+            {!isSmallMobile && (
+              <Typography
+                variant="h6"
+                noWrap
+                sx={{
+                  fontWeight: 700,
+                }}
+              >
+                MUNICIPALIDAD DE CHOLCHOL
+              </Typography>
+            )}
+          </Box>
 
           {/* Menú para pantallas grandes */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
@@ -127,16 +189,32 @@ function Header() {
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: 'white',
+                  color: '#1a237e', // Color azul oscuro para los botones
                   display: 'block',
                   '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    backgroundColor: 'rgba(26, 35, 126, 0.1)', // Hover en tono azul claro
                   },
                 }}
               >
                 {page.title}
               </Button>
             ))}
+            <Button
+              component="a"
+              href="#"
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: theme.palette.primary.main,
+                display: 'block',
+                fontWeight: 600,
+                '&:hover': {
+                  backgroundColor: 'rgba(26, 35, 126, 0.1)',
+                },
+              }}
+            >
+              Webmail
+            </Button>
           </Box>
         </Toolbar>
       </Container>

@@ -11,46 +11,48 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import NewsCard from '../components/NewsCard';
+import { newsImages } from '../assets/images';
 
-// Datos de ejemplo para las noticias
+// Datos de las noticias
 const newsData = [
   {
     id: 1,
-    title: 'Inauguración del Nuevo Centro Comunitario',
-    content: 'Se inauguró el nuevo centro comunitario que beneficiará a más de 500 familias del sector.',
-    imageUrl: 'https://source.unsplash.com/random/800x600/?community',
-    category: 'Eventos',
+    title: 'Taller de Acondicionamiento Físico',
+    content: 'Participa en nuestro taller de acondicionamiento físico y mejora tu calidad de vida.',
+    imageUrl: newsImages.acondicionamiento,
+    category: 'Deportes',
     date: '15 de Marzo, 2024',
     readTime: '3 min',
   },
   {
     id: 2,
-    title: 'Mejoras en la Infraestructura Vial',
-    content: 'Se iniciaron las obras de mejoramiento en las principales calles del centro de la ciudad.',
-    imageUrl: 'https://source.unsplash.com/random/800x600/?road',
-    category: 'Infraestructura',
+    title: 'Taller Comunitario sobre Cambio Climático',
+    content: 'PARTICIPA EN EL TALLER COMUNITARIO SOBRE CAMBIO CLIMÁTICO. CONSTRUYAMOS JUNTOS EL PERFIL COMUNAL DE AMENAZAS CLIMÁTICAS DE CHOLCHOL',
+    imageUrl: newsImages.tallercambiocli,
+    category: 'Medio Ambiente',
     date: '14 de Marzo, 2024',
     readTime: '4 min',
   },
   {
     id: 3,
-    title: 'Programa de Reciclaje Municipal',
-    content: 'Nuevo programa de reciclaje para promover la sustentabilidad en nuestra comunidad.',
-    imageUrl: 'https://source.unsplash.com/random/800x600/?recycling',
-    category: 'Medio Ambiente',
+    title: 'Programa Beca Municipal Educación Año 2025',
+    content: 'Conoce los detalles del nuevo programa de becas municipales para el año 2025.',
+    imageUrl: newsImages.beca.image1,
+    category: 'Educación',
     date: '13 de Marzo, 2024',
     readTime: '5 min',
+    additionalImages: [
+      newsImages.beca.image2,
+      newsImages.beca.image3
+    ]
   },
-  // Puedes agregar más noticias aquí
 ];
 
 const categories = [
   'Todas',
-  'Eventos',
-  'Infraestructura',
-  'Medio Ambiente',
-  'Cultura',
   'Deportes',
+  'Medio Ambiente',
+  'Educación',
 ];
 
 function News() {

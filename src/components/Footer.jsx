@@ -13,6 +13,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const footerLinks = [
   { title: 'Inicio', path: '/' },
@@ -29,6 +30,9 @@ const legalLinks = [
 
 function Footer() {
   const theme = useTheme();
+
+  // URL de Google Maps con la dirección
+  const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Jose+Joaquin+Perez+449+Cholchol';
 
   return (
     <Box
@@ -47,14 +51,30 @@ function Footer() {
             <Typography variant="h6" gutterBottom>
               Municipalidad de Cholchol
             </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+              <LocationOnIcon sx={{ mr: 1, mt: 0.5 }} />
+              <Link
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={{
+                  textDecoration: 'none',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                <Typography variant="body2">
+                  José Joaquín Pérez 449, Cholchol, Araucanía
+                </Typography>
+              </Link>
+            </Box>
             <Typography variant="body2" sx={{ mb: 2 }}>
-              Av. Principal 123, Cholchol
-            </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
-              Tel: +56 9 1234 5678
+              Tel: (45) 273 4200
             </Typography>
             <Typography variant="body2">
-              Email: contacto@cholchol.cl
+              Email: municipalidad@municholchol.cl
             </Typography>
           </Grid>
 
@@ -93,27 +113,18 @@ function Footer() {
                 color="inherit"
                 aria-label="Facebook"
                 component="a"
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Municipalidad-de-Cholchol/100065025870874/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FacebookIcon />
               </IconButton>
-              <IconButton
-                color="inherit"
-                aria-label="Twitter"
-                component="a"
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TwitterIcon />
-              </IconButton>
+              
               <IconButton
                 color="inherit"
                 aria-label="Instagram"
                 component="a"
-                href="https://instagram.com"
+                href="https://www.instagram.com/municholchol_oficial/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -123,7 +134,7 @@ function Footer() {
                 color="inherit"
                 aria-label="YouTube"
                 component="a"
-                href="https://youtube.com"
+                href="https://www.youtube.com/@MunicipalidaddeCholcholOficial"
                 target="_blank"
                 rel="noopener noreferrer"
               >

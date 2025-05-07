@@ -1,27 +1,22 @@
 import React from 'react';
 import { Box, Typography, Button, Container, Grid, useTheme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
+import heroBackground from '../assets/images/hero/PLAZAYFRONTISMUNICIPALIDAD1.webp';
+import { heroImages } from '../assets/images';
 
 const HeroSection = styled(Box)(({ theme }) => ({
   position: 'relative',
-  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBackground})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
   color: 'white',
   padding: theme.spacing(8, 0),
   overflow: 'hidden',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'url("/pattern.png")',
-    opacity: 0.1,
-    zIndex: 1,
-  },
 }));
 
 const InfoItem = styled(Box)(({ theme }) => ({
@@ -70,6 +65,8 @@ function Hero() {
                 variant="contained"
                 color="secondary"
                 size="large"
+                component={Link}
+                to="/municipio"
                 sx={{
                   px: 4,
                   py: 1.5,
@@ -86,6 +83,8 @@ function Hero() {
                 variant="outlined"
                 color="inherit"
                 size="large"
+                component={Link}
+                to="/servicios"
                 sx={{
                   px: 4,
                   py: 1.5,
@@ -104,10 +103,10 @@ function Hero() {
           <Grid item xs={12} md={5}>
             <Box
               sx={{
-                backgroundColor: 'rgba(255,255,255,0.1)',
+                backgroundColor: 'rgba(41, 41, 41, 0.45)',
                 borderRadius: 4,
                 p: 3,
-                backdropFilter: 'blur(10px)',
+                backdropFilter: 'blur(2px)',
               }}
             >
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
@@ -115,15 +114,15 @@ function Hero() {
               </Typography>
               <InfoItem>
                 <LocationOnIcon />
-                <Typography>Av. Principal 123, Cholchol</Typography>
+                <Typography>José Joaquín Pérez 449</Typography>
               </InfoItem>
               <InfoItem>
                 <PhoneIcon />
-                <Typography>+56 9 1234 5678</Typography>
+                <Typography>(45) 273 4200</Typography>
               </InfoItem>
               <InfoItem>
                 <EmailIcon />
-                <Typography>contacto@cholchol.cl</Typography>
+                <Typography>municipalidad@municholchol.cl</Typography>
               </InfoItem>
             </Box>
           </Grid>

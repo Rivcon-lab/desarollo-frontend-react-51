@@ -20,6 +20,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import MessageIcon from '@mui/icons-material/Message';
 import CloseIcon from '@mui/icons-material/Close';
 
+/**
+ * Estilizado del componente Paper con efectos de hover
+ * @param {Object} theme - Tema de Material-UI
+ */
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
   borderRadius: theme.spacing(2),
@@ -30,6 +34,10 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   },
 }));
 
+/**
+ * Estilizado del componente TextField con efectos de hover
+ * @param {Object} theme - Tema de Material-UI
+ */
 const StyledTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
     '&:hover fieldset': {
@@ -38,22 +46,57 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 
+/**
+ * Componente de formulario de contacto
+ * @returns {JSX.Element} Componente ContactForm
+ */
 function ContactForm() {
   const theme = useTheme();
+  
+  /**
+   * Estado del formulario
+   * @type {Object}
+   */
   const [form, setForm] = useState({
     nombre: '',
     email: '',
     mensaje: '',
   });
+
+  /**
+   * Estado de errores del formulario
+   * @type {Object}
+   */
   const [errors, setErrors] = useState({});
+
+  /**
+   * Estado de éxito del envío
+   * @type {boolean}
+   */
   const [success, setSuccess] = useState(false);
+
+  /**
+   * Estado de carga del formulario
+   * @type {boolean}
+   */
   const [loading, setLoading] = useState(false);
+
+  /**
+   * Estado del snackbar de notificaciones
+   * @type {Object}
+   */
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: '',
     severity: 'success',
   });
 
+  /**
+   * Valida un campo específico del formulario
+   * @param {string} field - Nombre del campo a validar
+   * @param {string} value - Valor del campo
+   * @returns {string} Mensaje de error si existe
+   */
   const validate = (field, value) => {
     let error = '';
     if (!value) {
@@ -71,12 +114,20 @@ function ContactForm() {
     return error;
   };
 
+  /**
+   * Maneja el cambio en los campos del formulario
+   * @param {Object} e - Evento del input
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
     setErrors({ ...errors, [name]: validate(name, value) });
   };
 
+  /**
+   * Maneja el envío del formulario
+   * @param {Object} e - Evento del formulario
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -115,6 +166,9 @@ function ContactForm() {
     setLoading(false);
   };
 
+  /**
+   * Maneja el cierre del snackbar
+   */
   const handleCloseSnackbar = () => {
     setSnackbar({ ...snackbar, open: false });
   };
@@ -124,7 +178,7 @@ function ContactForm() {
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 600, mb: 4 }}>
         Contáctanos
       </Typography>
-      <Box component="form" onSubmit={handleSubmit}>
+      <Box component="form" onSubmit={handleSubmit} noValidate>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <StyledTextField
@@ -135,6 +189,7 @@ function ContactForm() {
               error={!!errors.nombre}
               helperText={errors.nombre}
               fullWidth
+              required
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -154,6 +209,7 @@ function ContactForm() {
               error={!!errors.email}
               helperText={errors.email}
               fullWidth
+              required
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -172,6 +228,7 @@ function ContactForm() {
               error={!!errors.mensaje}
               helperText={errors.mensaje}
               fullWidth
+              required
               multiline
               rows={4}
               InputProps={{

@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import News from './pages/News';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Municipio from './pages/Municipio';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/noticias" element={<News />} />
+          <Route path="/municipio" element={<Municipio />} />
           <Route path="/servicios" element={<Services />} />
           <Route path="/contacto" element={<Contact />} />
         </Routes>
