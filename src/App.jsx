@@ -1,22 +1,30 @@
 import React from 'react';
-import { CssBaseline, Container } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme from './theme';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import NewsCard from './components/NewsCard';
-import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import News from './pages/News';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
-      <Container maxWidth="md">
-        <Hero />
-        {/* Aquí podrías mapear NewsCard para mostrar varias noticias */}
-        <NewsCard />
-        <ContactForm />
-      </Container>
-    </>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/noticias" element={<News />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/contacto" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
