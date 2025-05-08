@@ -121,13 +121,11 @@ Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📝 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ## 👥 Autores
 
-- **Tu Nombre** - *Desarrollo Frontend* - [Tu GitHub](https://github.com/tuusuario)
+- **Cristopher Rivera Concha** - *Desarrollo Frontend* - (https://github.com/Rivcon-lab)
 
 ## 🙏 Agradecimientos
 
