@@ -49,12 +49,12 @@ Portal web moderno y accesible para la Municipalidad de Cholchol, desarrollado c
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/tuusuario/municipalidad-cholchol.git
+git clone [https://github.com/Rivcon-lab/desarollo-frontend-react-51.git]
 ```
 
 2. **Instalar dependencias**
 ```bash
-cd municipalidad-cholchol
+cd desarollo-frontend-react-51
 npm install
 ```
 
@@ -126,12 +126,6 @@ Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
 ## 👥 Autores
 
 - **Cristopher Rivera Concha** - *Desarrollo Frontend* - (https://github.com/Rivcon-lab)
-
-## 🙏 Agradecimientos
-
-- Material-UI por su excelente biblioteca de componentes
-- React Router por su sistema de enrutamiento
-- La comunidad de React por su constante soporte
 
 ---
 
